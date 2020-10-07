@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
 import { Form, FormGroup, Input, Select, Radio } from '../components/Form';
+import { Button } from '../components/Button';
 
 const renderTextField = ({ input, type, label }) => (
   <Fragment>
@@ -156,6 +157,9 @@ const RegisterForm = () => {
             component={renderRadioField}
             label='Female'
           />
+        </FormGroup>
+        <FormGroup>
+          <Button type='submit'>Sign up</Button>
         </FormGroup>
       </Form>
     </Fragment>
