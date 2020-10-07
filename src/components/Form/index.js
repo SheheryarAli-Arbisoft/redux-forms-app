@@ -1,3 +1,5 @@
 import Form from './Form';
+import FormGroup from './FormGroup';
+import Input from './Input';
 
-export { Form };
+export { Form, FormGroup, Input };
