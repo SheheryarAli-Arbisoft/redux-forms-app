@@ -29,4 +29,14 @@ const Input = styled.input`
   font-size: ${({ theme }) => theme.size.text.normal};
 `;
 
-export { Form, FormGroup, Input };
+const Select = styled.select`
+  box-sizing: border-box;
+  width: 100%;
+  flex-grow: 1;
+  padding: ${({ theme }) => theme.spacing.small};
+  font-size: ${({ theme }) => theme.size.text.normal};
+`;
+
+const Radio = styled(Input);
+
+export { Form, FormGroup, Input, Select, Radio };
