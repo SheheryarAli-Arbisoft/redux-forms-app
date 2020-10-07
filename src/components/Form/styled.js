@@ -23,7 +23,6 @@ const FormGroup = styled.div`
 
 const Input = styled.input`
   box-sizing: border-box;
-  width: 100%;
   flex-grow: 1;
   padding: ${({ theme }) => theme.spacing.small};
   font-size: ${({ theme }) => theme.size.text.normal};
@@ -31,12 +30,23 @@ const Input = styled.input`
 
 const Select = styled.select`
   box-sizing: border-box;
-  width: 100%;
   flex-grow: 1;
   padding: ${({ theme }) => theme.spacing.small};
   font-size: ${({ theme }) => theme.size.text.normal};
 `;
 
-const Radio = styled(Input);
+const Radio = styled.div`
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: ${({ theme }) => theme.spacing.small};
+  font-size: ${({ theme }) => theme.size.text.medium};
+
+  & > input {
+    margin: 0;
+    margin-right: ${({ theme }) => theme.spacing.small};
+  }
+`;
 
 export { Form, FormGroup, Input, Select, Radio };

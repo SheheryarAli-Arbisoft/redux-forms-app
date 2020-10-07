@@ -12,6 +12,7 @@ const theme = {
   size: {
     text: {
       normal: '16px',
+      medium: '18px',
     },
   },
 };

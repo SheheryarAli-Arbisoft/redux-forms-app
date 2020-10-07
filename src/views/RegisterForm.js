@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
-import { Form, FormGroup, Input, Select } from '../components/Form';
+import { Form, FormGroup, Input, Select, Radio } from '../components/Form';
 
-const renderTextField = ({ input, type, placeholder }) => (
+const renderTextField = ({ input, type, label }) => (
   <Fragment>
-    <Input {...input} type={type} placeholder={placeholder} />
+    <Input {...input} type={type} placeholder={label} />
   </Fragment>
 );
 
@@ -85,6 +85,12 @@ const renderYearSelectField = ({ input, type }) => {
   );
 };
 
+const renderRadioField = ({ input, type, label, checked }) => (
+  <Fragment>
+    <Radio {...input} type={type} label={label} checked={checked} />
+  </Fragment>
+);
+
 const RegisterForm = () => {
   return (
     <Fragment>
@@ -94,13 +100,13 @@ const RegisterForm = () => {
             name='firstName'
             type='text'
             component={renderTextField}
-            placeholder='First Name'
+            label='First Name'
           />
           <Field
             name='lastName'
             type='text'
             component={renderTextField}
-            placeholder='Last Name'
+            label='Last Name'
           />
         </FormGroup>
         <FormGroup>
@@ -108,7 +114,7 @@ const RegisterForm = () => {
             name='email'
             type='email'
             component={renderTextField}
-            placeholder='Email address'
+            label='Email address'
           />
         </FormGroup>
         <FormGroup>
@@ -116,7 +122,7 @@ const RegisterForm = () => {
             name='password'
             type='password'
             component={renderTextField}
-            placeholder='Password'
+            label='Password'
           />
         </FormGroup>
         <FormGroup>
@@ -136,7 +142,21 @@ const RegisterForm = () => {
             component={renderYearSelectField}
           />
         </FormGroup>
-        <FormGroup></FormGroup>
+        <FormGroup>
+          <Field
+            name='gender'
+            type='radio'
+            component={renderRadioField}
+            label='Male'
+            checked={true}
+          />
+          <Field
+            name='gender'
+            type='radio'
+            component={renderRadioField}
+            label='Female'
+          />
+        </FormGroup>
       </Form>
     </Fragment>
   );
