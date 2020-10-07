@@ -11,4 +11,11 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export { Container };
+const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.color.border};
+  margin: ${({ theme }) => theme.spacing.normal} 0;
+`;
+
+export { Container, Divider };

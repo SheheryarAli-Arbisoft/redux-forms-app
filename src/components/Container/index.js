@@ -1,3 +1,4 @@
 import Container from './Container';
+import Divider from './Divider';
 
-export { Container };
+export { Container, Divider };

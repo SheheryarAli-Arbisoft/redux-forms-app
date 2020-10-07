@@ -15,7 +15,7 @@ const Radio = ({ label, ...rest }) => {
   );
 };
 
-Radio.propTypes = propTypes;
-Radio.defaultProps = defaultProps;
+Radio.propTypes = propTypes.radio;
+Radio.defaultProps = defaultProps.radio;
 
 export default Radio;

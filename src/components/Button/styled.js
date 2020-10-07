@@ -13,6 +13,15 @@ const Button = styled.button`
   border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.hover};
+  }
 `;
 
 export { Button };

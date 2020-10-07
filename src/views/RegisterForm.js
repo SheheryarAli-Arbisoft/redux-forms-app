@@ -3,6 +3,8 @@ import { reduxForm, Field } from 'redux-form';
 
 import { Form, FormGroup, Input, Select, Radio } from '../components/Form';
 import { Button } from '../components/Button';
+import { Heading, SubHeading, Primary, Secondary } from '../components/Text';
+import { Divider } from '../components/Container';
 
 const renderTextField = ({ input, type, label }) => (
   <Fragment>
@@ -96,6 +98,12 @@ const RegisterForm = () => {
   return (
     <Fragment>
       <Form>
+        <Heading>Sign Up</Heading>
+
+        <SubHeading>It's quick and easy.</SubHeading>
+
+        <Divider />
+
         <FormGroup>
           <Field
             name='firstName'
@@ -110,6 +118,7 @@ const RegisterForm = () => {
             label='Last Name'
           />
         </FormGroup>
+
         <FormGroup>
           <Field
             name='email'
@@ -118,6 +127,7 @@ const RegisterForm = () => {
             label='Email address'
           />
         </FormGroup>
+
         <FormGroup>
           <Field
             name='password'
@@ -126,6 +136,8 @@ const RegisterForm = () => {
             label='Password'
           />
         </FormGroup>
+
+        <Primary>Date of birth</Primary>
         <FormGroup>
           <Field
             name='dobDate'
@@ -143,6 +155,8 @@ const RegisterForm = () => {
             component={renderYearSelectField}
           />
         </FormGroup>
+
+        <Primary>Gender</Primary>
         <FormGroup>
           <Field
             name='gender'
@@ -158,6 +172,13 @@ const RegisterForm = () => {
             label='Female'
           />
         </FormGroup>
+
+        <Secondary>
+          By clicking Sign Up, you agree to our Terms, Data Policy and Cookie
+          Policy. You may receive SMS notifications from us and can opt out at
+          any time.
+        </Secondary>
+
         <FormGroup>
           <Button type='submit'>Sign up</Button>
         </FormGroup>

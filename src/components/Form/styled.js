@@ -42,6 +42,8 @@ const Radio = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.spacing.small};
   font-size: ${({ theme }) => theme.size.text.medium};
+  border: 1px solid ${({ theme }) => theme.color.border};
+  border-radius: 5px;
 
   & > input {
     margin: 0;
