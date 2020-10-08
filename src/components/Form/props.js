@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  showError: PropTypes.bool,
+  children: PropTypes.object,
 };
 
-const defaultProps = {
-  showError: false,
-};
+const defaultProps = {};
 
 export { propTypes, defaultProps };

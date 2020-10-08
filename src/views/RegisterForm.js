@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { reduxForm, Field } from 'redux-form';
 
 import { Form, FormGroup, Input, Select, Radio } from '../components/Form';
@@ -191,6 +192,10 @@ const RegisterForm = ({ handleSubmit }) => {
       </Form>
     </Fragment>
   );
+};
+
+RegisterForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default reduxForm({

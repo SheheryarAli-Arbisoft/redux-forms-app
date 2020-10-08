@@ -21,11 +21,13 @@ const Radio = ({ label, showError, ...rest }) => {
 Radio.propTypes = {
   ...propTypes,
   label: PropTypes.string,
+  showError: PropTypes.bool,
 };
 
 Radio.defaultProps = {
   ...defaultProps,
   label: '',
+  showError: false,
 };
 
 export default Radio;

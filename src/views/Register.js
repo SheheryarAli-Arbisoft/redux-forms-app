@@ -43,6 +43,7 @@ const onSubmit = values => {
   Gender: ${gender}
   `;
 
+  // eslint-disable-next-line no-alert
   alert(result);
 };
 
