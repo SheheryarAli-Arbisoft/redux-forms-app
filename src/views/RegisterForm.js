@@ -17,7 +17,7 @@ const renderTextField = ({ input, type, label, meta: { touched, error } }) => (
   </Fragment>
 );
 
-const renderDateSelectField = ({ input, type }) => {
+const renderDateSelectField = ({ input, type, meta: { touched, error } }) => {
   const getDates = () => {
     const result = [];
     for (let i = 1; i <= 31; i++) {
@@ -28,7 +28,7 @@ const renderDateSelectField = ({ input, type }) => {
 
   return (
     <Fragment>
-      <Select {...input} type={type}>
+      <Select {...input} type={type} showError={touched && error}>
         <option value=''>Date</option>
         {getDates().map(date => (
           <option key={`date-${date}`} value={date}>
@@ -40,7 +40,7 @@ const renderDateSelectField = ({ input, type }) => {
   );
 };
 
-const renderMonthSelectField = ({ input, type }) => {
+const renderMonthSelectField = ({ input, type, meta: { touched, error } }) => {
   const months = [
     'Jan',
     'Feb',
@@ -58,10 +58,10 @@ const renderMonthSelectField = ({ input, type }) => {
 
   return (
     <Fragment>
-      <Select {...input} type={type}>
+      <Select {...input} type={type} showError={touched && error}>
         <option value=''>Month</option>
         {months.map((month, index) => (
-          <option key={`month-${index + 1}`} value={index + 1}>
+          <option key={`month-${index + 1}`} value={month}>
             {month}
           </option>
         ))}
@@ -70,7 +70,7 @@ const renderMonthSelectField = ({ input, type }) => {
   );
 };
 
-const renderYearSelectField = ({ input, type }) => {
+const renderYearSelectField = ({ input, type, meta: { touched, error } }) => {
   const getYears = () => {
     const result = [];
     for (let i = 2020; i >= 1900; i--) {
@@ -81,7 +81,7 @@ const renderYearSelectField = ({ input, type }) => {
 
   return (
     <Fragment>
-      <Select {...input} type={type}>
+      <Select {...input} type={type} showError={touched && error}>
         <option value=''>Year</option>
         {getYears().map(year => (
           <option key={`year-${year}`} value={year}>
@@ -93,9 +93,9 @@ const renderYearSelectField = ({ input, type }) => {
   );
 };
 
-const renderRadioField = ({ input, type, label }) => (
+const renderRadioField = ({ input, type, label, meta: { touched, error } }) => (
   <Fragment>
-    <Radio {...input} type={type} label={label} />
+    <Radio {...input} type={type} label={label} showError={touched && error} />
   </Fragment>
 );
 
@@ -168,14 +168,14 @@ const RegisterForm = ({ handleSubmit }) => {
             type='radio'
             component={renderRadioField}
             label='Male'
-            value='0'
+            value='Male'
           />
           <Field
             name='gender'
             type='radio'
             component={renderRadioField}
             label='Female'
-            value='1'
+            value='Female'
           />
         </FormGroup>
 

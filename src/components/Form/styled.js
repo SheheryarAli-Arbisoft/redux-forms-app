@@ -39,6 +39,11 @@ const Select = styled.select`
   flex-grow: 1;
   padding: ${({ theme }) => theme.spacing.small};
   font-size: ${({ theme }) => theme.size.text.normal};
+  border-width: ${({ showError }) => (showError ? '2px' : '1px')};
+  border-radius: 5px;
+  border-style: solid;
+  border-color: ${({ theme, showError }) =>
+    showError ? theme.color.input.error : theme.color.input.border};
 `;
 
 const Radio = styled.div`
@@ -48,8 +53,11 @@ const Radio = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.spacing.small};
   font-size: ${({ theme }) => theme.size.text.medium};
-  border: 1px solid ${({ theme }) => theme.color.border};
+  border-width: ${({ showError }) => (showError ? '2px' : '1px')};
   border-radius: 5px;
+  border-style: solid;
+  border-color: ${({ theme, showError }) =>
+    showError ? theme.color.input.error : theme.color.input.border};
 
   & input {
     margin: 0;
