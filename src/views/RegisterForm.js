@@ -6,9 +6,14 @@ import { Button } from '../components/Button';
 import { Heading, SubHeading, Primary, Secondary } from '../components/Text';
 import { Divider } from '../components/Container';
 
-const renderTextField = ({ input, type, label }) => (
+const renderTextField = ({ input, type, label, meta: { touched, error } }) => (
   <Fragment>
-    <Input {...input} type={type} placeholder={label} />
+    <Input
+      {...input}
+      type={type}
+      placeholder={label}
+      showError={touched && error}
+    />
   </Fragment>
 );
 
@@ -94,10 +99,10 @@ const renderRadioField = ({ input, type, label }) => (
   </Fragment>
 );
 
-const RegisterForm = () => {
+const RegisterForm = ({ handleSubmit }) => {
   return (
     <Fragment>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Heading>Sign Up</Heading>
 
         <SubHeading>It's quick and easy.</SubHeading>

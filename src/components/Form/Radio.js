@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import { Radio as CustomRadio } from './styled';
 
@@ -17,7 +18,14 @@ const Radio = ({ label, ...rest }) => {
   );
 };
 
-Radio.propTypes = propTypes.radio;
-Radio.defaultProps = defaultProps.radio;
+Radio.propTypes = {
+  ...propTypes,
+  label: PropTypes.string,
+};
+
+Radio.defaultProps = {
+  ...defaultProps,
+  label: '',
+};
 
 export default Radio;

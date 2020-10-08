@@ -23,9 +23,15 @@ const FormGroup = styled.div`
 
 const Input = styled.input`
   box-sizing: border-box;
-  flex-grow: 1;
+  display: block;
+  width: 100%;
   padding: ${({ theme }) => theme.spacing.small};
   font-size: ${({ theme }) => theme.size.text.normal};
+  border-width: ${({ showError }) => (showError ? '2px' : '1px')};
+  border-radius: 5px;
+  border-style: solid;
+  border-color: ${({ theme, showError }) =>
+    showError ? theme.color.input.error : theme.color.input.border};
 `;
 
 const Select = styled.select`

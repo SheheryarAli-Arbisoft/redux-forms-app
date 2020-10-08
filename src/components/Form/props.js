@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  radio: {
-    label: PropTypes.string,
-  },
+  showError: PropTypes.bool,
 };
 
 const defaultProps = {
-  radio: {
-    label: '',
-  },
+  showError: false,
 };
 
 export { propTypes, defaultProps };

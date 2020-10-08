@@ -9,6 +9,10 @@ const theme = {
       primary: '#000000',
       secondary: '#616161',
     },
+    input: {
+      border: '#767676',
+      error: '#ff0000',
+    },
   },
   spacing: {
     xsmall: '5px',
