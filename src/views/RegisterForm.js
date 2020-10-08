@@ -88,9 +88,9 @@ const renderYearSelectField = ({ input, type }) => {
   );
 };
 
-const renderRadioField = ({ input, type, label, checked }) => (
+const renderRadioField = ({ input, type, label }) => (
   <Fragment>
-    <Radio {...input} type={type} label={label} checked={checked} />
+    <Radio {...input} type={type} label={label} />
   </Fragment>
 );
 
@@ -163,13 +163,14 @@ const RegisterForm = () => {
             type='radio'
             component={renderRadioField}
             label='Male'
-            checked={true}
+            value='0'
           />
           <Field
             name='gender'
             type='radio'
             component={renderRadioField}
             label='Female'
+            value='1'
           />
         </FormGroup>
 

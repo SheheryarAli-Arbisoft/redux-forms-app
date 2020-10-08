@@ -8,8 +8,10 @@ const Radio = ({ label, ...rest }) => {
   return (
     <Fragment>
       <CustomRadio>
-        <input {...rest} id={label} />
-        <label htmlFor={label}>{label}</label>
+        <label>
+          <input {...rest} />
+          {label}
+        </label>
       </CustomRadio>
     </Fragment>
   );
